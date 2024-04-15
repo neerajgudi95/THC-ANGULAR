@@ -1,0 +1,21 @@
+<div class="thc__testimonials section__padding">
+  <div class="thc__testimonials-heading">
+    <h2>TESTIMONIALS</h2>
+  </div>
+  <div class="thc__testimonials-container">
+    <div class="thc__testimonials-center">
+      <nz-carousel nzDotPosition="bottom">
+        <div
+          nz-carousel-content
+          *ngFor="let video of testimonialVideos; let i; as: index"
+        >
+          <video controls controlsList="nodownload" [src]="video">
+            <!-- <source [src]="video.videoUrl" type="video/mp4" /> -->
+          </video>
+          <!-- {{ video.videoUrl }} -->
+        </div>
+      </nz-carousel>
+    </div>
+  </div>
+</div>
+

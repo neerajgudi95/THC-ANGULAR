@@ -1,0 +1,42 @@
+.thc__header {
+  display: flex;
+  height: 70vh;
+}
+
+.thc__header-content span {
+  color: gray;
+  font-size: 20px;
+}
+
+.thc__header-content h1 {
+  letter-spacing: 5px;
+  font-size: 4.6rem;
+  font-weight: 800;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.thc__header-content p {
+  font-size: 1.3rem;
+  color: white;
+  width: 40ch;
+}
+
+@media screen and (max-width: 650px) {
+  .thc__header-content h1 {
+    font-size: 4rem;
+    line-height: 60px;
+  }
+
+  .thc__header-content p {
+    font-size: 1rem;
+    line-height: 24px;
+  }
+
+  .thc__header-content {
+    margin: 0 0 3rem;
+    text-align: center;
+  }
+}

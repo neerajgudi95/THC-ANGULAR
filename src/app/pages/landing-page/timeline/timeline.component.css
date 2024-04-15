@@ -1,0 +1,48 @@
+.thc__courseInfo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.thc__courseInfo-wrapper h2 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+
+.ant-select-item-option-content {
+  color: white;
+}
+
+nz-select {
+  width: 200px !important;
+  padding: 10px !important;
+  border-radius: 8px !important;
+  color: #fff;
+  font-family: inherit;
+}
+
+.thc__courseInfo-container {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 0;
+  position: relative;
+  width: 900px;
+  color: white;
+}
+
+.thc__courseInfo-container::after {
+  content: "";
+  background-color: var(--color-btns);
+  position: absolute;
+  left: calc(50% - 2px);
+  width: 4px;
+  height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .thc__courseInfo-container {
+    width: 100%;
+  }
+}

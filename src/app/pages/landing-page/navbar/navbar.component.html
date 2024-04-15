@@ -1,0 +1,87 @@
+<div class="thc__navbar gradient__bg">
+  <div class="thc__navbar-links">
+    <a routerLink="/">
+      <div class="thc__navbar-links_logo">
+        <img
+          src="../../../../assets/earth.png"
+          alt="logo"
+          width="{50}"
+          height="{50}"
+        />
+        <div class="thc__navbar-links_brand">
+          <p>THREAT</p>
+          <p>HUNTERS</p>
+        </div>
+      </div>
+    </a>
+    <div class="thc__navbar-links_container">
+      <div class="thc__navbar-menu">
+        <ul>
+          <li>
+            <a routerLink="/home" routerLinkActive="active"> Home </a>
+          </li>
+          <li>
+            <a
+              routerLink="/cyber-security"
+              (click)="testRoute($event)"
+              routerLinkActive="active"
+              >Cyber Security</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/our-goals"
+              (click)="testRoute($event)"
+              routerLinkActive="active"
+            >
+              Our Goals
+            </a>
+          </li>
+          <li>
+            <a
+              routerLink="/courses"
+              (click)="testRoute($event)"
+              routerLinkActive="active"
+            >
+              Courses
+            </a>
+          </li>
+          <li>
+            <a
+              routerLink="/gallery"
+              (click)="testRoute($event)"
+              routerLinkActive="active"
+            >
+              Gallery
+            </a>
+          </li>
+
+          <li>
+            <a
+              class="thc__navbar-links-btn thc__navbar-links_login"
+              routerLink="/dashboard/home"
+            >
+              Dashboard
+            </a>
+          </li>
+          <li>
+            <a
+              class="thc__navbar-links-btn thc__navbar-links_login"
+              routerLink="/login"
+            >
+              Login
+            </a>
+          </li>
+          <li>
+            <a
+              routerLink="/register"
+              class="thc__navbar-links-btn thc__navbar-links_join"
+            >
+              Join
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

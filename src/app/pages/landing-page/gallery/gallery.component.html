@@ -1,0 +1,44 @@
+<div class="thc__landingPage">
+  <div class="section__padding thc__gallery">
+    <h2>Gallery</h2>
+    <p class="thc__gallery-category">Weekly Online Classes</p>
+    <div class="gallery-container">
+      <img
+        [src]="img.imageUrl"
+        [alt]="img.tag"
+        *ngFor="let img of galleryImages.slice(0, 5)"
+      />
+    </div>
+    <p class="thc__gallery-category">Feedbacks taken after every class</p>
+    <div class="gallery-container">
+      <img
+        [src]="img.imageUrl"
+        [alt]="img.tag"
+        *ngFor="let img of galleryImages.slice(5, 11)"
+      />
+    </div>
+    <p class="thc__gallery-category">Sample notes used for teaching</p>
+    <div class="gallery-container">
+      <img
+        [src]="img.imageUrl"
+        [alt]="img.tag"
+        *ngFor="let img of galleryImages.slice(11, 15)"
+        (click)="imgPreview([{ src: img.imageUrl }])"
+      />
+    </div>
+    <p class="thc__gallery-category">
+      Samples of feedback given during mock interviews
+    </p>
+    <div class="gallery-container">
+      <img
+        nz-image
+        [nzSrc]="img.imageUrl"
+        [alt]="img.tag"
+        width="200px"
+        height="200px"
+        *ngFor="let img of galleryImages.slice(15, 16)"
+        (click)="imgPreview([{ src: img.imageUrl }])"
+      />
+    </div>
+  </div>
+</div>

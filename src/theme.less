@@ -1,0 +1,49 @@
+// Custom Theming for NG-ZORRO
+// For more information: https://ng.ant.design/docs/customize-theme/en
+@import "../node_modules/ng-zorro-antd/ng-zorro-antd.less";
+
+// Override less variables to here
+// View all variables: https://github.com/NG-ZORRO/ng-zorro-antd/blob/master/components/style/themes/default.less
+
+@select-dropdown-bg: #031b34;
+@select-background: #031b34;
+@select-item-selected-bg: rgba(1, 124, 255, 0.3);
+@select-item-active-bg: rgba(1, 124, 255, 0.3);
+// @select-item-active-bg:;
+@select-item-selected-color: rgba(1, 124, 255, 0.3);
+// @select-dropdown-color: white;
+@timeline-dot-bg: #7dce13;
+
+@card-head-color: white;
+@card-head-background: #042c54;
+@card-background: #042c54;
+
+@card-head-height: 50px;
+
+.ant-select-item-option-content {
+  color: white;
+}
+
+.ant-select-arrow .anticon > svg {
+  color: white;
+  margin-right: 10px;
+}
+
+.ant-select-item:hover {
+  background-color: rgba(1, 124, 255, 0.2);
+}
+
+.ant-timeline-item {
+  width: 700px;
+  height: 150px;
+}
+
+.ant-card-small
+  > .ant-card-head
+  > .ant-card-head-wrapper
+  > .ant-card-head-title {
+  white-space: normal;
+}
+.ant-card-small > .ant-card-body {
+  color: white;
+}

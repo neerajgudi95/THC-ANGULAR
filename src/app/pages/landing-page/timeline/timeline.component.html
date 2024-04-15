@@ -1,0 +1,36 @@
+<div class="section__padding thc__landingPage">
+  <div class="month-select">
+    <nz-select [(ngModel)]="selectedMonth">
+      <nz-option nzValue="first" nzLabel="First Month"></nz-option>
+      <nz-option nzValue="second" nzLabel="Second Month"></nz-option>
+      <nz-option nzValue="third" nzLabel="Third Month"></nz-option
+    ></nz-select>
+  </div>
+  <div class="thc__courseInfo-wrapper">
+    <h2>Course timeline for {{ selectedMonth }} month</h2>
+    <nz-timeline *ngIf="selectedMonth == 'first'" nzMode="alternate">
+      <nz-timeline-item nzColor="green" *ngFor="let item of firstMonthTimeline">
+        <nz-card [nzBordered]="false" [nzTitle]="item.text1" nzSize="small">
+          {{ item.text2 }} {{ item.id }}
+        </nz-card>
+      </nz-timeline-item>
+    </nz-timeline>
+    <nz-timeline *ngIf="selectedMonth == 'second'" nzMode="alternate">
+      <nz-timeline-item
+        nzColor="green"
+        *ngFor="let item of secondMonthTimeline"
+      >
+        <nz-card [nzBordered]="false" [nzTitle]="item.text1" nzSize="small">
+          {{ item.text2 }}
+        </nz-card>
+      </nz-timeline-item>
+    </nz-timeline>
+    <nz-timeline *ngIf="selectedMonth == 'third'" nzMode="alternate">
+      <nz-timeline-item nzColor="green" *ngFor="let item of thirdMonthTimeline">
+        <nz-card [nzBordered]="false" [nzTitle]="item.text1" nzSize="small">
+          {{ item.text2 }}
+        </nz-card>
+      </nz-timeline-item>
+    </nz-timeline>
+  </div>
+</div>

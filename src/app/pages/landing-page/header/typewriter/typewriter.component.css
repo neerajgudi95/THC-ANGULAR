@@ -1,0 +1,12 @@
+.typeWriter {
+  color: #fff;
+  margin-top: 1.5rem;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 27px;
+}
+
+.typeWriter span {
+  margin-left: 10px;
+  color: #7dce13 !important;
+}
