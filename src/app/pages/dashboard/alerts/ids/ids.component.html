@@ -1,0 +1,67 @@
+<div nz-row>
+  <nz-page-header
+    nzTitle="Endpoint Detection and Response Alerts"
+    style="text-align: center"
+  ></nz-page-header>
+  <div nz-col nzSpan="24">
+    <nz-table #basicTable [nzData]="idsAlerts" nzSize="small" nzBordered>
+      <thead>
+        <tr>
+          <th nzAlign="center" nzWidth="60px"></th>
+          <th nzAlign="center">ALERT ID</th>
+          <th nzAlign="center">ALERT Description</th>
+          <th nzAlign="center">alert_severity</th>
+          <th nzAlign="center">Source Hostname</th>
+          <th nzAlign="center">Destination Hostname</th>
+          <th nzAlign="center">Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let data of basicTable.data">
+          <tr>
+            <td
+              [nzExpand]="expandSet.has(data.alert_id)"
+              (nzExpandChange)="onExpandChange(data.alert_id, $event)"
+              nzAlign="center"
+            ></td>
+            <td nzAlign="center">{{ data.alert_id }}</td>
+            <td nzAlign="center">{{ data.alert_description }}</td>
+            <td nzAlign="center">
+              <nz-tag [nzColor]="getTagColor(data.alert_severity)">{{
+                data.alert_severity.toUpperCase()
+              }}</nz-tag>
+            </td>
+            <td nzAlign="center">{{ data.source_hostname }}</td>
+            <td nzAlign="center">{{ data.destination_hostname }}</td>
+            <td nzAlign="center">
+              {{ data.timestamp | date : "MMM dd, YYYY h:mm:ss a" }}
+            </td>
+          </tr>
+          <tr [nzExpand]="expandSet.has(data.alert_id)"></tr>
+        </ng-container>
+      </tbody>
+    </nz-table>
+  </div>
+</div>
+
+
+
+
+<!-- <nz-descriptions [nzColumn]="3">
+    <nz-descriptions-item nzTitle="Alert ID">{{data.alert_id}}</nz-descriptions-item>
+    </nz-descriptions>
+    
+    Alert Id
+    Alert Description
+    Severity
+    Source IP
+    Source Hostname
+    Destination IP
+    Destination Hostname
+    User
+    Protocol
+    Failed Attempts
+    Action Taken
+    Timestamp
+    Mitigation Steps
+     -->

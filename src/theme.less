@@ -4,7 +4,7 @@
 
 // Override less variables to here
 // View all variables: https://github.com/NG-ZORRO/ng-zorro-antd/blob/master/components/style/themes/default.less
-
+@menu-item-active-bg: #83db49;
 @select-dropdown-bg: #031b34;
 @select-background: #031b34;
 @select-item-selected-bg: rgba(1, 124, 255, 0.3);
@@ -13,10 +13,26 @@
 @select-item-selected-color: rgba(1, 124, 255, 0.3);
 // @select-dropdown-color: white;
 @timeline-dot-bg: #7dce13;
+@table-header-bg: #1c315e;
+@table-header-color: #fff;
+// @table-expanded-row-bg: #1c315e;
 
-@card-head-color: white;
-@card-head-background: #042c54;
-@card-background: #042c54;
+// @descriptions-bg: #1c315e;
+
+.ant-table-expanded-row .ant-descriptions-item-label {
+  font-weight: 600;
+}
+
+.ant-table-expanded-row .ant-descriptions-item-content {
+  color: #8a8a8a;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+// @card-head-color: white;
+// @card-head-background: #042c54;
+// @card-background: #042c54;
 
 @card-head-height: 50px;
 
@@ -29,6 +45,10 @@
   margin-right: 10px;
 }
 
+.ant-card-meta-description {
+  color: rgba(255, 255, 255);
+}
+
 .ant-select-item:hover {
   background-color: rgba(1, 124, 255, 0.2);
 }
@@ -38,12 +58,23 @@
   height: 150px;
 }
 
-.ant-card-small
-  > .ant-card-head
-  > .ant-card-head-wrapper
-  > .ant-card-head-title {
+.courseInfo
+  > .ant-card-small
+  .ant-card-head
+  .ant-card-head-wrapper
+  .ant-card-head-title {
   white-space: normal;
 }
-.ant-card-small > .ant-card-body {
+.courseInfo > .ant-card-body,
+.courseInfo > .ant-card-head {
   color: white;
+  background-color: #042c54;
+}
+
+.ant-page-header {
+  padding: 10px;
+}
+
+.ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background-color: #83db49;
 }

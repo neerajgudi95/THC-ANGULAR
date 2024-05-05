@@ -1,0 +1,39 @@
+<div nz-row>
+  <div nz-col nzSpan="24">
+    <nz-page-header nzTitle="RECORDINGS">
+      <nz-page-header-extra>
+        <button
+          nz-button
+          style="background-color: #83db49; color: white"
+          (click)="uploadRecordings()"
+        >
+          Upload Recordings
+        </button>
+      </nz-page-header-extra>
+    </nz-page-header>
+  </div>
+  <div nz-col nzSpan="24">
+    <nz-table #basicTable [nzData]="listOfRecordings" nzSize="small">
+      <thead>
+        <tr>
+          <th>Topic</th>
+          <th>Instructor</th>
+          <th>Posted on</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of basicTable.data">
+          <td>{{ data.topic }}</td>
+          <td>{{ data.instructor }}</td>
+          <td>{{ data.postedOn | date : "MMMM dd, yyyy" }}</td>
+          <td>
+            <button nz-button nzType="link">View</button>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+</div>
+
+<ng-template #reload> </ng-template>

@@ -1,0 +1,48 @@
+.sidebar-logo {
+  position: relative;
+  height: 64px;
+  overflow: hidden;
+  line-height: 64px;
+  transition: all 0.3s;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.sidebar-logo img {
+  display: inline-block;
+  height: 32px;
+  width: auto;
+  vertical-align: middle;
+}
+
+.sidebar-logo .brand {
+  color: #83db49;
+  display: inline-block;
+  margin-left: 15px;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.sidebar-logo .brand span:nth-child(2) {
+  margin-left: 8px;
+}
+
+.ant-menu-item {
+  position: relative;
+  font-size: 16px;
+}
+
+.ant-menu-item span {
+  font-size: 20px;
+}
+
+.menu-header {
+  position: relative;
+  display: inline-block;
+  margin-left: 15px;
+  font-weight: 600;
+  vertical-align: middle;
+  color: grey;
+  font-weight: 700;
+  margin: 20px;
+}

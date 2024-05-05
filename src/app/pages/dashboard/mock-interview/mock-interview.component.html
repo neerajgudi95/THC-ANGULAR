@@ -1,0 +1,17 @@
+<div nz-row *ngIf="role !== 'admin'">
+  <div nz-col="" nzSpan="24">
+    <nz-page-header nzTitle="MOCK INTERVIEW FEEDBACK"></nz-page-header>
+  </div>
+  <div nz-col nzSpan="24" style="padding-left: 20px">
+    <nz-tabset nzSize="large">
+      <nz-tab *ngFor="let item of feedbackList" [nzTitle]="item.module">
+        <ng-template nz-tab>
+          <app-feedback-item [feedbackItem]="item"></app-feedback-item>
+        </ng-template>
+      </nz-tab>
+    </nz-tabset>
+  </div>
+</div>
+<ng-container *ngIf="role == 'admin'">
+  <app-feedback-form></app-feedback-form>
+</ng-container>

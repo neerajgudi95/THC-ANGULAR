@@ -1,0 +1,36 @@
+<div nz-row>
+  <nz-page-header
+    nzTitle="Endpoint Detection and Response Alerts"
+    style="text-align: center"
+  ></nz-page-header>
+
+  <div nz-col nzSpan="24">
+    <nz-tabset style="padding: 0 20px" [nzAnimated]="false">
+      <nz-tab [nzTitle]="main">
+        <ng-template nz-tab>
+          <app-edr-main></app-edr-main>
+        </ng-template>
+      </nz-tab>
+      <nz-tab [nzTitle]="wip">
+        <ng-template nz-tab>
+          <app-edr-wip></app-edr-wip>
+        </ng-template>
+      </nz-tab>
+      <nz-tab [nzTitle]="closed">
+        <ng-template nz-tab>
+          <app-edr-closed></app-edr-closed>
+        </ng-template>
+      </nz-tab>
+    </nz-tabset>
+  </div>
+</div>
+
+<ng-template #main>
+  <strong nz-typography style="color: blue">MAIN ALERTS</strong>
+</ng-template>
+<ng-template #wip>
+  <strong nz-typography style="color: green">ALERTS UNDER INVESTIGATION</strong>
+</ng-template>
+<ng-template #closed>
+  <strong nz-typography style="color: red">CLOSED</strong>
+</ng-template>

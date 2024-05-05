@@ -1,1 +1,52 @@
-<p>login works!</p>
+<div class="thc__loginForm-wrapper">
+  <div class="thc__loginForm-container section__margin">
+    <img
+      src=".././../../../assets/earth.png"
+      alt="logo"
+      width="50px"
+      height="50px"
+    />
+    <h3>Login</h3>
+    <form
+      nz-form
+      [formGroup]="validateForm"
+      class="login-form"
+      (ngSubmit)="submitForm()"
+    >
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please enter your email!">
+          <nz-input-group nzPrefixIcon="user">
+            <input
+              type="text"
+              nz-input
+              formControlName="email"
+              placeholder="Email"
+            />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please enter your Password!">
+          <nz-input-group nzPrefixIcon="lock">
+            <input
+              type="password"
+              nz-input
+              formControlName="password"
+              placeholder="Password"
+            />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <div class="thc__loginBtnsLinks">
+        <button nz-button type="submit" nzType="primary">Login</button>
+        <a routerLink="/forgot-password" style="color: blue">
+          Forgot you password?
+        </a>
+        <a to="/register">
+          Don't have an account?
+          <span style="color: blue">Sign Up</span>
+        </a>
+      </div>
+    </form>
+  </div>
+</div>

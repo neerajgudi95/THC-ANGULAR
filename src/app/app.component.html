@@ -1,5 +1,21 @@
 <div *ngIf="isLoggedIn">
-  <router-outlet></router-outlet>
+  <nz-layout>
+    <nz-sider [nzTrigger]="null" nzWidth="256px">
+      <app-sidebar></app-sidebar>
+    </nz-sider>
+    <nz-layout>
+      <nz-header>
+        <app-header></app-header>
+      </nz-header>
+      <nz-content class="inner-content">
+        <router-outlet></router-outlet>
+      </nz-content>
+      <nz-footer>
+        © {{ currentYear }} <strong>threathuntersclub.tech</strong> - All rights
+        reserved</nz-footer
+      >
+    </nz-layout>
+  </nz-layout>
 </div>
 
 <div *ngIf="!isLoggedIn">

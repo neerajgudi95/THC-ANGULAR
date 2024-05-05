@@ -10,6 +10,7 @@
   },
   "private": true,
   "dependencies": {
+    "@amcharts/amcharts5": "^5.9.4",
     "@angular/animations": "^16.1.0",
     "@angular/common": "^16.1.0",
     "@angular/compiler": "^16.1.0",
@@ -19,6 +20,9 @@
     "@angular/platform-browser-dynamic": "^16.1.0",
     "@angular/router": "^16.1.0",
     "@ant-design/icons-angular": "^16.0.0",
+    "moment": "^2.30.1",
+    "ng-": "^1.0.0-alpha.14",
+    "ng-apexcharts": "^1.8.0",
     "ng-zorro-antd": "^16.2.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

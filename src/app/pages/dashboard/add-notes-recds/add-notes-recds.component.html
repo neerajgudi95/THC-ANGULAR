@@ -1,0 +1,66 @@
+<ng-container *ngIf="type == 'notes'">
+  <form nz-form [formGroup]="uploadForm">
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Filename required">
+        <input
+          type="text"
+          nz-input
+          formControlName="name"
+          placeholder="Filename"
+        />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Topic required">
+        <input
+          type="text"
+          nz-input
+          formControlName="topic"
+          placeholder="Topic"
+        />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please attach a file">
+        <input type="file" nz-input formControlName="file" placeholder="file" />
+      </nz-form-control>
+    </nz-form-item>
+    <button nz-button nzType="primary">Upload</button>
+  </form>
+</ng-container>
+
+<ng-container *ngIf="type == 'recordings'">
+  <form nz-form [formGroup]="uploadForm">
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Topic required">
+        <input
+          type="text"
+          nz-input
+          formControlName="topic"
+          placeholder="Topic"
+        />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Filename required">
+        <input
+          type="text"
+          nz-input
+          formControlName="instructor"
+          placeholder="Instructor"
+        />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please attach a file">
+        <input
+          type="text"
+          nz-input
+          formControlName="link"
+          placeholder="recording link"
+        />
+      </nz-form-control>
+    </nz-form-item>
+    <button nz-button nzType="primary">Upload</button>
+  </form>
+</ng-container>

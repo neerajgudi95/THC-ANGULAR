@@ -1,0 +1,53 @@
+<div nz-row *ngIf="isAdminRole" [nzGutter]="[16, 16]">
+  <div nz-col nzSpan="8">
+    <nz-card style="border-top: 4px solid rgb(0, 128, 0, 0.5)">
+      <nz-statistic
+        [nzValue]="(1949101 | number)!"
+        [nzTitle]="'Members'"
+      ></nz-statistic>
+    </nz-card>
+  </div>
+  <div nz-col nzSpan="8">
+    <nz-card style="border-top: 4px solid rgb(255, 0, 0, 0.5)">
+      <nz-statistic
+        [nzValue]="(2019.111 | number : '1.0-2')!"
+        [nzTitle]="'Earnings'"
+      ></nz-statistic>
+    </nz-card>
+  </div>
+  <div nz-col nzSpan="8">
+    <nz-card style="border-top: 4px solid rgb(255, 255, 0, 0.5)"></nz-card>
+  </div>
+  <div nz-col nzSpan="8">
+    <nz-card
+      nzTitle="CPU DETAILS"
+      style="border-top: 4px solid rgb(0, 0, 255, 0.5)"
+    >
+      <div id="chartdiv"></div>
+    </nz-card>
+  </div>
+  <div nz-col nzSpan="24"></div>
+</div>
+<div nz-row *ngIf="!isAdminRole">
+  <div nz-col nzSpan="24">
+    <nz-page-header
+      [nzTitle]="title"
+      nzSubtitle="Welcome to Treat Hunters Club."
+    >
+    </nz-page-header>
+  </div>
+  <div nz-col nzSpan="24">
+    <iframe
+      src="https://threatmap.checkpoint.com/"
+      class="cyber-map"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture full"
+    ></iframe>
+  </div>
+</div>
+
+<ng-template #title>
+  <h2 nz-typography>
+    Hi,
+    <span style="color: #83db49"> NEERAJ </span>
+  </h2>
+</ng-template>

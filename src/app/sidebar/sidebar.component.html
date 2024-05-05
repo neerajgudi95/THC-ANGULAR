@@ -1,0 +1,65 @@
+<div class="sidebar-logo">
+  <a href="#">
+    <img src="../../assets/earth.png" alt="logo" />
+    <div class="brand">
+      <span>THREAT</span>
+      <span>HUNTERS</span>
+    </div>
+  </a>
+</div>
+<ul nz-menu nzTheme="dark" nzMode="inline" style="margin-top: 15px">
+  <p class="menu-header">DASHBOARD</p>
+  <li nz-menu-item nzMatchRouter>
+    <span nz-icon nzType="home" nzTheme="outline"></span>
+    <a routerLink="/dashboard/home" style="margin-left: 10px">Home</a>
+  </li>
+  <li nz-menu-item nzMatchRouter>
+    <span nz-icon nzType="read" nzTheme="outline"></span>
+    <a routerLink="/dashboard/notes" style="margin-left: 10px">Notes</a>
+  </li>
+  <li nz-menu-item nzMatchRouter>
+    <span nz-icon nzType="video-camera" nzTheme="outline"></span>
+    <a routerLink="/dashboard/recordings" style="margin-left: 10px"
+      >Class Recordings</a
+    >
+  </li>
+  <li nz-menu-item nzMatchRouter>
+    <span nz-icon nzType="question-circle" nzTheme="outline"></span>
+    <a routerLink="/dashboard/quiz" style="margin-left: 10px">Test Yourself</a>
+  </li>
+  <li nz-menu-item nzMatchRouter>
+    <span nz-icon nzType="ng-zorro:assignment" nzTheme="outline"></span>
+    <a routerLink="/dashboard/assignments" style="margin-left: 10px"
+      >Assignments</a
+    >
+  </li>
+  <li nz-menu-item nzMatchRouter *ngIf="role == 'member'">
+    <span nz-icon nzType="interaction" nzTheme="outline"></span>
+    <a routerLink="/dashboard/mock-interview" style="margin-left: 10px"
+      >Mock Interview</a
+    >
+  </li>
+  <li nz-menu-item nzMatchRouter *ngIf="role == 'admin'">
+    <span nz-icon nzType="interaction" nzTheme="outline"></span>
+    <a routerLink="/dashboard/mock-interview" style="margin-left: 10px"
+      >Mock Interview Feedback</a
+    >
+  </li>
+</ul>
+<ul nz-menu nzTheme="dark" nzMode="inline" style="margin-top: 15px">
+  <p class="menu-header">ALERTS</p>
+  <li nz-menu-item nzMatchRouter>
+    <span nz-icon nzType="database" nzTheme="outline"></span>
+    <a routerLink="/dashboard/alerts/edr" style="margin-left: 10px">EDR</a>
+  </li>
+  <li nz-menu-item nzMatchRouter>
+    <span nz-icon nzType="safety" nzTheme="outline"></span>
+    <a routerLink="/dashboard/alerts/ids" style="margin-left: 10px">IDS</a>
+  </li>
+  <li nz-menu-item nzMatchRouter>
+    <span nz-icon nzType="ng-zorro:antd" nzTheme="outline"></span>
+    <a routerLink="/dashboard/alerts/splunk" style="margin-left: 10px"
+      >SPLUNK</a
+    >
+  </li>
+</ul>

@@ -1,0 +1,40 @@
+<div nz-row>
+  <nz-page-header nzTitle="LEADERBOARD"></nz-page-header>
+
+  <div nz-col nzSpan="24">
+    <nz-tabset>
+      <nz-tab *ngFor="let module of leaderboardList" [nzTitle]="module.module">
+        <ng-template nz-tab>
+          <nz-table #basicTable [nzData]="module.leaderBoard">
+            <thead>
+              <tr>
+                <th nzAlign="center">Name</th>
+                <th nzAlign="center">Score</th>
+                <th nzAlign="center">Time taken</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let data of basicTable.data; let i = index">
+                <td nzAlign="center">
+                  {{ data.firstName }} {{ data.lastName }}
+                </td>
+                <td nzAlign="center">{{ data.marks }}</td>
+                <td nzAlign="center">{{ formatTimeTaken(data.timeTaken) }}</td>
+                <td>
+                  <span
+                    nz-icon
+                    nzType="trophy"
+                    nzTheme="outline"
+                    style="font-size: 30px"
+                    [ngStyle]="{ 'color': getTrophyColor(i) }"
+                  ></span>
+                </td>
+              </tr>
+            </tbody>
+          </nz-table>
+        </ng-template>
+      </nz-tab>
+    </nz-tabset>
+  </div>
+</div>

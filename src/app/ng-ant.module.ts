@@ -53,6 +53,11 @@ import { NzAffixModule } from 'ng-zorro-antd/affix';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzImageModule } from 'ng-zorro-antd/image';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
+import { NzProgressModule } from 'ng-zorro-antd/progress';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzSpaceModule } from 'ng-zorro-antd/space';
 
 @NgModule({
   declarations: [],
@@ -115,6 +120,11 @@ import { NzImageModule } from 'ng-zorro-antd/image';
     NzPopconfirmModule,
     NzModalModule,
     NzImageModule,
+    NzLayoutModule,
+    NzPageHeaderModule,
+    NzProgressModule,
+    NzListModule,
+    NzSpaceModule
   ],
   exports: [
     NzButtonModule,
@@ -175,6 +185,11 @@ import { NzImageModule } from 'ng-zorro-antd/image';
     NzPopconfirmModule,
     NzModalModule,
     NzImageModule,
+    NzLayoutModule,
+    NzPageHeaderModule,
+    NzProgressModule,
+    NzListModule,
+    NzSpaceModule
   ],
 })
 export class NgAntProviderModule {}

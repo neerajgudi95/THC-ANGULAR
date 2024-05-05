@@ -14,11 +14,19 @@ import { NgAntProviderModule } from './ng-ant.module';
 import { NavbarComponent } from './pages/landing-page/navbar/navbar.component';
 import { FooterComponent } from './pages/landing-page/footer/footer.component';
 import { IconsProviderModule } from './icons-provider.module';
+import { HeaderComponent } from './header/header.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 registerLocaleData(en);
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, FooterComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    FooterComponent,
+    HeaderComponent,
+    SidebarComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -1,0 +1,38 @@
+<div nz-row>
+  <div nz-col nzSpan="24">
+    <nz-page-header nzTitle="NOTES">
+      <nz-page-header-extra>
+        <button
+          nz-button
+          style="background-color: #83db49; color: white"
+          *ngIf="role == 'admin'"
+          (click)="uploadNotes()"
+        >
+          Upload Notes
+        </button>
+      </nz-page-header-extra></nz-page-header
+    >
+  </div>
+  <div nz-col nzSpan="24">
+    <nz-table #basicTable [nzData]="listOfNotes" nzSize="small">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Topic</th>
+          <th>Posted on</th>
+          <th>Download</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of basicTable.data">
+          <td>{{ data.name }}</td>
+          <td>{{ data.topic }}</td>
+          <td>{{ data.postedOn | date : "MMMM dd, yyyy" }}</td>
+          <td>
+            <button nz-button nzType="link">Download</button>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+</div>

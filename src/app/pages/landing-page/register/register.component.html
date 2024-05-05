@@ -1,1 +1,80 @@
-<p>register works!</p>
+<div class="thc__registration-wrapper section__padding">
+  <div class="thc__registration-container">
+    <img
+      src="../../../../assets/earth.png"
+      alt="logo"
+      width="50px"
+      height="50px"
+    />
+    <h3>Join Us</h3>
+    <form
+      nz-form
+      [formGroup]="validateForm"
+      (ngSubmit)="submitForm()"
+      nzLayout="vertical"
+    >
+      <nz-form-item nzSpan="24">
+        <nz-form-control nzErrorTip="Please enter valid email id">
+          <input nz-input formControlName="email" placeholder="email" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item nzSpan="24">
+        <nz-form-control nzErrorTip="Please enter your password!">
+          <input
+            nz-input
+            type="password"
+            formControlName="password"
+            placeholder="password"
+            (ngModelChange)="updateConfirmValidator()"
+          />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item nzSpan="24">
+        <nz-form-control [nzErrorTip]="errorTpl">
+          <input
+            nz-input
+            type="password"
+            formControlName="checkPassword"
+            placeholder="Confirm password"
+          />
+          <ng-template #errorTpl let-control>
+            <ng-container *ngIf="control.hasError('required')"
+              >Please confirm your password!</ng-container
+            >
+            <ng-container *ngIf="control.hasError('confirm')">
+              Passwords do not match!
+            </ng-container>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item nzSpan="24">
+        <nz-form-control nzErrorTip="Please enter your name!">
+          <input nz-input formControlName="fullName" placeholder="Fullname" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item nzSpan="24">
+        <nz-form-control nzErrorTip="Please input your phone number!">
+          <input
+            formControlName="phoneNumber"
+            placeholder="Phone number"
+            nz-input
+          />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item nzSpan="24">
+        <nz-form-control nzErrorTip="Please enter your profession!">
+          <input
+            nz-input
+            placeholder="Profession"
+            formControlName="profession"
+          />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item nzSpan="24" nz-row class="register-area">
+        <nz-form-control>
+          <button nz-button nzType="primary">Register</button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,97 @@
+<div nz-row>
+  <div nz-col nzSpan="24">
+    <nz-table #basicTable [nzData]="wipAlerts" nzSize="small" nzBordered>
+      <thead>
+        <tr>
+          <th nzAlign="center" nzWidth="60px"></th>
+          <th nzAlign="center">ALERT ID</th>
+          <th nzAlign="center">SEVERITY</th>
+          <th nzAlign="center">HOSTNAME</th>
+          <th nzAlign="center">DESCRIPTTION</th>
+          <th nzAlign="center">ACTION</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let data of basicTable.data">
+          <tr>
+            <td
+              [nzExpand]="expandSet.has(data.alertID)"
+              (nzExpandChange)="onExpandChange(data.alertID, $event)"
+              nzAlign="center"
+            ></td>
+            <td nzAlign="center">{{ data.alertID }}</td>
+            <td nzAlign="center">
+              <nz-tag [nzColor]="getTagColor(data.severity)">{{
+                data.severity.toUpperCase()
+              }}</nz-tag>
+            </td>
+            <td nzAlign="center">{{ data.hostname }}</td>
+            <td nzAlign="center">{{ data.alertDescription }}</td>
+            <td nzAlign="center">
+              <button
+                nz-button
+                nzType="link"
+                nz-tooltip
+                nzTooltipTitle="Mark as closed"
+                (click)="openVirusTotal(data.hash)"
+              >
+                <span
+                  nz-icon
+                  nzType="safety-certificate"
+                  nzTheme="outline"
+                ></span>
+              </button>
+            </td>
+          </tr>
+          <tr [nzExpand]="expandSet.has(data.alertID)">
+            <nz-descriptions [nzColumn]="3">
+              <nz-descriptions-item nzTitle="Alert ID">{{
+                data.alertID
+              }}</nz-descriptions-item>
+              <nz-descriptions-item nzTitle="Alert Description">{{
+                data.alertDescription
+              }}</nz-descriptions-item>
+              <nz-descriptions-item nzTitle="Severity"
+                ><nz-tag [nzColor]="getTagColor(data.severity)">{{
+                  data.severity.toUpperCase()
+                }}</nz-tag></nz-descriptions-item
+              >
+              <nz-descriptions-item nzTitle="Command Executed">{{
+                data.commandExecuted
+              }}</nz-descriptions-item>
+              <nz-descriptions-item nzTitle="Filename">{{
+                data.fileName
+              }}</nz-descriptions-item>
+              <nz-descriptions-item nzTitle="Filepath">{{
+                data.filePath
+              }}</nz-descriptions-item>
+              <nz-descriptions-item
+                nzTitle="Hash"
+                style="display: flex; align-items: center"
+                >{{ data.hash }}
+                <span
+                  nz-icon
+                  nzType="ng-zorro:virus-total"
+                  nzTheme="outline"
+                  (click)="openVirusTotal(data.hash)"
+                  style="margin-left: 10px; cursor: pointer; font-size: 20px"
+                ></span
+              ></nz-descriptions-item>
+              <nz-descriptions-item nzTitle="Hostname">{{
+                data.hostname
+              }}</nz-descriptions-item>
+              <nz-descriptions-item nzTitle="MitreIOC">{{
+                data.mitreIOC
+              }}</nz-descriptions-item>
+              <nz-descriptions-item nzTitle="Status"
+                ><nz-tag [nzColor]="getStatusColor(data.status)">{{
+                  data.status.toUpperCase()
+                }}</nz-tag></nz-descriptions-item
+              >
+            </nz-descriptions>
+          </tr>
+        </ng-container>
+      </tbody>
+    </nz-table>
+  </div>
+</div>
