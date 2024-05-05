@@ -20,7 +20,81 @@ export class HomeComponent implements AfterViewInit {
   };
 
   createChart() {
+    let root = am5.Root.new('chartdiv');
+    root._logo?.dispose()
+    let chart = root.container.children.push(
+      am5radar.RadarChart.new(root, {
+        startAngle: -180,
+        endAngle: 0,
+        radius: am5.percent(80),
+        innerRadius: -30,
+      })
+    );
+
+    // Create axis renderer
+    let axisRenderer = am5radar.AxisRendererCircular.new(root, {
+      strokeOpacity: 0.1,
+      minGridDistance: 30,
+    });
+
+    // Enable ticks
+    axisRenderer.ticks.template.setAll({
+      visible: true,
+      strokeOpacity: 0.5,
+    });
+
+    
+
+    let axis = chart.xAxes.push(
+      am5xy.ValueAxis.new(root, {
+        min: 0,
+        max: 45,
+        renderer: axisRenderer,
+      })
+    );
+
    
+    
+    
+
+    
+
+    // Create a range
+     this.createRange(0,20,0x297373,axis);
+    this.createRange(20,35,0x946B49,axis);
+    this.createRange(35,45,0xff621f,axis);
+    
+    // Disable grid
+    axisRenderer.grid.template.setAll({
+      visible: false,
+    });
+
+    //hand
+    let handDataItem = axis.makeDataItem({
+      value: 35
+    });
+    
+    let hand = handDataItem.set("bullet", am5xy.AxisBullet.new(root, {
+      sprite: am5radar.ClockHand.new(root, {
+        radius: am5.percent(99)
+      })
+    }));
+    
+    axis.createAxisRange(handDataItem);
+  }
+
+  createRange(start:any,end:any,color:any,axis:any,label?:any){
+    let rangeDataItem = axis.makeDataItem({
+      value: start,
+      endValue: end
+    });
+    
+    axis.createAxisRange(rangeDataItem);
+  rangeDataItem.get("axisFill")?.setAll({
+     visible: true,
+      fill:am5.color(color),
+      fillOpacity:0.8
+    })
   }
 
   ngAfterViewInit(): void {

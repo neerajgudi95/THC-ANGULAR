@@ -8,7 +8,7 @@ import { NzIconService } from 'ng-zorro-antd/icon';
 })
 export class AppComponent {
   title = 'threat-hunters-club';
-  isLoggedIn: boolean = false;
+  isLoggedIn: boolean = true;
   isCollapsed = false;
   currentYear = new Date().getFullYear();
   splunkIcon =
