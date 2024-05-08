@@ -4,8 +4,3 @@
   border: none;
   border-radius: 10px;
 }
-.cpuDetails{
-  border:1px solid  #f0f0f0 ;
-  border-top: 4px solid rgb(0, 0, 255, 0.5); 
-  height: 300px;
-}

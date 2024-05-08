@@ -1,29 +1,71 @@
 <div nz-row *ngIf="isAdminRole" [nzGutter]="[16, 16]">
-  <div nz-col nzSpan="8">
-    <nz-card style="border-top: 4px solid rgb(0, 128, 0, 0.5)">
+  <div nz-col nzSpan="12">
+    <nz-card
+      style="border-top: 4px solid rgb(0, 128, 0, 0.5); border-radius: 8px"
+    >
       <nz-statistic
-        [nzValue]="(1949101 | number)!"
+        [nzValue]="(16 | number)!"
         [nzTitle]="'Members'"
       ></nz-statistic>
     </nz-card>
   </div>
-  <div nz-col nzSpan="8">
-    <nz-card style="border-top: 4px solid rgb(255, 0, 0, 0.5)">
+  <div nz-col nzSpan="12">
+    <nz-card
+      style="border-top: 4px solid rgb(255, 0, 0, 0.5); border-radius: 8px"
+    >
       <nz-statistic
-        [nzValue]="(2019.111 | number : '1.0-2')!"
+        [nzValue]="(42500 | currency : 'INR' : 'symbol' : '4.2-2')!"
         [nzTitle]="'Earnings'"
       ></nz-statistic>
     </nz-card>
   </div>
-  <div nz-col nzSpan="8">
-    <nz-card style="border-top: 4px solid rgb(255, 255, 0, 0.5)"></nz-card>
+  <div nz-col nzSpan="12">
+    <nz-card
+      style="border-top: 4px solid rgb(0, 0, 255, 0.5); border-radius: 8px"
+    >
+      <app-cpu-gauge></app-cpu-gauge>
+    </nz-card>
   </div>
-  <div nz-col nzSpan="8">
-    
-      <div id="chartdiv" class="cpuDetails"></div>
-  
+  <div nz-col nzSpan="12">
+    <nz-card
+      style="border-top: 4px solid rgb(255, 255, 0, 0.5); border-radius: 8px"
+    >
+      <app-disk-space-gauge></app-disk-space-gauge>
+    </nz-card>
   </div>
-  <div nz-col nzSpan="24"></div>
+  <div nz-col nzSpan="24">
+    <nz-card style="border-radius: 8px">
+      <nz-statistic [nzTitle]="processTitle" nzValue=""></nz-statistic>
+      <nz-table
+        #basicTable
+        [nzData]="processDetails"
+        nzSize="small"
+        nzShowPagination="false"
+        nzBordered
+      >
+        <thead>
+          <tr>
+            <th nzAlign="center">Command</th>
+            <th nzAlign="center">CPU</th>
+            <th nzAlign="center">MEMORY</th>
+            <th nzAlign="center">PID</th>
+            <th nzAlign="center">TIME (mm:ss.ms)</th>
+            <th nzAlign="center">USER</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of basicTable.data">
+            <td nzAlign="center">{{ data.command }}</td>
+            <td nzAlign="center">{{ data.cpu }}</td>
+            <td nzAlign="center">{{ data.mem }}</td>
+            <td nzAlign="center">{{ data.pid }}</td>
+            <td nzAlign="center">{{ data.time }}</td>
+            <td nzAlign="center">{{ data.user }}</td>
+          </tr>
+        </tbody>
+      </nz-table>
+    </nz-card>
+  </div>
 </div>
 <div nz-row *ngIf="!isAdminRole">
   <div nz-col nzSpan="24">
@@ -47,4 +89,9 @@
     Hi,
     <span style="color: #83db49"> NEERAJ </span>
   </h2>
+</ng-template>
+
+<ng-template #processTitle>
+  <span nz-icon nzType="partition" nzTheme="outline"></span>
+  TOP FIVE PROCESSES
 </ng-template>

@@ -7,6 +7,6 @@ import { dummyFeedbackList } from '../../landing-page/_model/data.model';
   styleUrls: ['./mock-interview.component.css'],
 })
 export class MockInterviewComponent {
-  role: string = 'admin';
+  role: string = 'member';
   feedbackList = dummyFeedbackList;
 }

@@ -2,63 +2,83 @@
   <div nz-col nzSpan="24">
     <nz-page-header nzTitle="INTERVIEW FEEDBACK FORM"></nz-page-header>
   </div>
-  <form nz-form [formGroup]="feedbackForm" nzLayout="vertical">
-    <div nz-col nzSpan="24">
-      <div nz-col nzSpan="12">
-        <nz-form-item>
-          <nz-form-label>Email</nz-form-label>
-          <nz-form-control nzErrorTip>
-            <input type="text" nz-input formControlName="email" />
-          </nz-form-control>
-        </nz-form-item>
-      </div>
-      <div nz-col nzSpan="12">
-        <nz-form-item>
-          <nz-form-label>Module</nz-form-label>
-          <nz-form-control nzErrorTip>
-            <input type="text" nz-input formControlName="module" />
-          </nz-form-control>
-        </nz-form-item>
-      </div>
-    </div>
-    <div nz-col nzSpan="24">
-      <nz-form-item>
-        <nz-form-label>Communication Skills</nz-form-label>
-        <nz-form-control nzErrorTip>
-          <input type="number" nz-input formControlName="commSkills" />
-        </nz-form-control>
-      </nz-form-item>
-      <nz-form-item>
-        <nz-form-label>Technical Skills</nz-form-label>
-        <nz-form-control nzErrorTip>
-          <input type="number" nz-input formControlName="techSkills" />
-        </nz-form-control>
-      </nz-form-item>
-      <nz-form-item>
-        <nz-form-label>Learning Attitude</nz-form-label>
-        <nz-form-control nzErrorTip>
-          <input type="number" nz-input formControlName="learingAttitude" />
-        </nz-form-control>
-      </nz-form-item>
-      <nz-form-item>
-        <nz-form-label>Problem Solving Attitude</nz-form-label>
-        <nz-form-control nzErrorTip>
-          <input type="number" nz-input formControlName="problemSolving" />
-        </nz-form-control>
-      </nz-form-item>
-      <nz-form-item>
-        <nz-form-label>Behaviour</nz-form-label>
-        <nz-form-control nzErrorTip>
-          <input type="number" nz-input formControlName="behavior" />
-        </nz-form-control>
-      </nz-form-item>
-      <nz-form-item>
-        <nz-form-label>Interview recording link</nz-form-label>
-        <nz-form-control nzErrorTip>
-          <input type="text" nz-input formControlName="recordingLink" />
-        </nz-form-control>
-      </nz-form-item>
-      <button nz-button nzType="primary">SUBMIT</button>
-    </div>
-  </form>
+  <div nz-col nzSpan="24">
+    <form nz-form [formGroup]="feedbackForm" nzLayout="vertical">
+      <nz-row nzJustify="center" [nzGutter]="[16, 16]">
+        <div nz-col nzSpan="8">
+          <nz-form-item>
+            <nz-form-label>Email</nz-form-label>
+            <nz-form-control nzErrorTip>
+              <input type="text" nz-input formControlName="email" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col nzSpan="8">
+          <nz-form-item>
+            <nz-form-label>Module</nz-form-label>
+            <nz-form-control nzErrorTip>
+              <input type="text" nz-input formControlName="module" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col nzSpan="8">
+          <nz-form-item>
+            <nz-form-label>Communication Skills</nz-form-label>
+            <nz-form-control nzErrorTip>
+              <input type="number" nz-input formControlName="commSkills" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+      </nz-row>
+      <nz-row nzJustify="center" [nzGutter]="[16, 16]">
+        <div nz-col nzSpan="8">
+          <nz-form-item>
+            <nz-form-label>Technical Skills</nz-form-label>
+            <nz-form-control nzErrorTip>
+              <input type="number" nz-input formControlName="techSkills" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col nzSpan="8">
+          <nz-form-item>
+            <nz-form-label>Learning Attitude</nz-form-label>
+            <nz-form-control nzErrorTip>
+              <input type="number" nz-input formControlName="learingAttitude" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col nzSpan="8">
+          <nz-form-item>
+            <nz-form-label>Problem Solving Attitude</nz-form-label>
+            <nz-form-control nzErrorTip>
+              <input type="number" nz-input formControlName="problemSolving" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+      </nz-row>
+      <nz-row nzJustify="center" [nzGutter]="[16, 16]">
+        <div nz-col nzSpan="8">
+          <nz-form-item>
+            <nz-form-label>Behaviour</nz-form-label>
+            <nz-form-control nzErrorTip>
+              <input type="number" nz-input formControlName="behavior" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col nzSpan="8">
+          <nz-form-item>
+            <nz-form-label>Interview recording link</nz-form-label>
+            <nz-form-control nzErrorTip>
+              <input type="text" nz-input formControlName="recordingLink" />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+      </nz-row>
+      <nz-row nzJustify="end">
+        <div nz-col nzSpan="6">
+          <button nz-button nzType="primary">SUBMIT</button>
+        </div>
+      </nz-row>
+    </form>
+  </div>
 </div>

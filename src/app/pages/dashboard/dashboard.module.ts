@@ -22,6 +22,8 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { AddNotesRecdsComponent } from './add-notes-recds/add-notes-recds.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FeedbackFormComponent } from './mock-interview/feedback-form/feedback-form.component';
+import { CpuGaugeComponent } from './home/cpu-gauge/cpu-gauge.component';
+import { DiskSpaceGaugeComponent } from './home/disk-space-gauge/disk-space-gauge.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { FeedbackFormComponent } from './mock-interview/feedback-form/feedback-f
     LeaderboardComponent,
     AddNotesRecdsComponent,
     FeedbackFormComponent,
+    CpuGaugeComponent,
+    DiskSpaceGaugeComponent,
   ],
   imports: [
     CommonModule,
