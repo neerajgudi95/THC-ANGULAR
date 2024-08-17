@@ -3,82 +3,172 @@
     <nz-page-header nzTitle="INTERVIEW FEEDBACK FORM"></nz-page-header>
   </div>
   <div nz-col nzSpan="24">
-    <form nz-form [formGroup]="feedbackForm" nzLayout="vertical">
-      <nz-row nzJustify="center" [nzGutter]="[16, 16]">
+    <form
+      nz-form
+      [formGroup]="feedbackForm"
+      nzLayout="vertical"
+      (ngSubmit)="submitForm()"
+    >
+      <div nz-row [nzGutter]="[16, 16]">
         <div nz-col nzSpan="8">
           <nz-form-item>
-            <nz-form-label>Email</nz-form-label>
-            <nz-form-control nzErrorTip>
-              <input type="text" nz-input formControlName="email" />
+            <nz-form-label nzRequired>Member Email</nz-form-label>
+            <nz-form-control>
+              <input nz-input type="text" formControlName="email" />
             </nz-form-control>
           </nz-form-item>
         </div>
         <div nz-col nzSpan="8">
           <nz-form-item>
-            <nz-form-label>Module</nz-form-label>
-            <nz-form-control nzErrorTip>
-              <input type="text" nz-input formControlName="module" />
+            <nz-form-label nzRequired>Module</nz-form-label>
+            <nz-form-control>
+              <input nz-input type="text" formControlName="module" />
             </nz-form-control>
           </nz-form-item>
         </div>
         <div nz-col nzSpan="8">
           <nz-form-item>
-            <nz-form-label>Communication Skills</nz-form-label>
-            <nz-form-control nzErrorTip>
-              <input type="number" nz-input formControlName="commSkills" />
+            <nz-form-label nzRequired>Interview Recording Link</nz-form-label>
+            <nz-form-control>
+              <input nz-input type="text" formControlName="recordingLink" />
             </nz-form-control>
           </nz-form-item>
         </div>
-      </nz-row>
-      <nz-row nzJustify="center" [nzGutter]="[16, 16]">
-        <div nz-col nzSpan="8">
+      </div>
+      <div nz-row [nzGutter]="[16, 16]">
+        <div nz-col nzSpan="4">
           <nz-form-item>
-            <nz-form-label>Technical Skills</nz-form-label>
-            <nz-form-control nzErrorTip>
-              <input type="number" nz-input formControlName="techSkills" />
+            <nz-form-label nzRequired>Communication Skills</nz-form-label>
+            <nz-form-control>
+              <input
+                nz-input
+                type="number"
+                min="1"
+                max="10"
+                formControlName="commSkills"
+              />
             </nz-form-control>
           </nz-form-item>
         </div>
-        <div nz-col nzSpan="8">
+        <div nz-col nzSpan="4">
           <nz-form-item>
-            <nz-form-label>Learning Attitude</nz-form-label>
-            <nz-form-control nzErrorTip>
-              <input type="number" nz-input formControlName="learingAttitude" />
+            <nz-form-label nzRequired>Technical Skills</nz-form-label>
+            <nz-form-control>
+              <input
+                nz-input
+                type="number"
+                min="1"
+                max="10"
+                formControlName="techSkills"
+              />
             </nz-form-control>
           </nz-form-item>
         </div>
-        <div nz-col nzSpan="8">
+        <div nz-col nzSpan="4">
           <nz-form-item>
-            <nz-form-label>Problem Solving Attitude</nz-form-label>
-            <nz-form-control nzErrorTip>
-              <input type="number" nz-input formControlName="problemSolving" />
-            </nz-form-control>
+            <nz-form-label nzRequired>Learning Attitude</nz-form-label>
+            <nz-form-control>
+              <input
+                nz-input
+                type="number"
+                min="1"
+                max="10"
+                formControlNam="learingAttitude"
+            /></nz-form-control>
           </nz-form-item>
         </div>
-      </nz-row>
-      <nz-row nzJustify="center" [nzGutter]="[16, 16]">
-        <div nz-col nzSpan="8">
+        <div nz-col nzSpan="4">
           <nz-form-item>
-            <nz-form-label>Behaviour</nz-form-label>
-            <nz-form-control nzErrorTip>
-              <input type="number" nz-input formControlName="behavior" />
+            <nz-form-label nzRequired>Problem Solving</nz-form-label>
+            <nz-form-control>
+              <input
+                nz-input
+                type="number"
+                min="1"
+                max="10"
+                formControlName="problemSolving"
+              />
             </nz-form-control>
           </nz-form-item>
         </div>
-        <div nz-col nzSpan="8">
+        <div nz-col nzSpan="4">
           <nz-form-item>
-            <nz-form-label>Interview recording link</nz-form-label>
-            <nz-form-control nzErrorTip>
-              <input type="text" nz-input formControlName="recordingLink" />
+            <nz-form-label nzRequired>Behaviour</nz-form-label>
+            <nz-form-control>
+              <input
+                nz-input
+                type="number"
+                min="1"
+                max="10"
+                formControlName="behavior"
+              />
             </nz-form-control>
           </nz-form-item>
         </div>
-      </nz-row>
-      <nz-row nzJustify="end">
-        <div nz-col nzSpan="6">
+      </div>
+      <div nz-row>
+        <div nz-col nzSpan="12" formArrayName="goodObservations">
+          <nz-form-item>
+            <nz-form-label>Positive observations</nz-form-label>
+            <nz-form-control
+              class="form-control"
+              *ngFor="let control of observationControls(); let i = index"
+            >
+              <input nz-input type="text" [formControlName]="i" />
+              <span
+                nz-icon
+                nzType="plus-circle"
+                nzTheme="twotone"
+                style="margin-left: 10px; cursor: pointer"
+                *ngIf="i === observationControls().length - 1"
+                (click)="addField('observ')"
+              ></span>
+              <span
+                nz-icon
+                nzType="minus-circle"
+                nzTheme="twotone"
+                *ngIf="observationControls().length > 1"
+                nzTwotoneColor="red"
+                style="margin-left: 10px; cursor: pointer"
+                (click)="removeField(i, 'observ')"
+              ></span>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col nzSpan="12" formArrayName="improvementsRequired">
+          <nz-form-item>
+            <nz-form-label>Improvements Required</nz-form-label>
+            <nz-form-control
+              class="form-control"
+              *ngFor="let control of improvementControls(); let i = index"
+            >
+              <input nz-input type="text" [formControlName]="i" />
+              <span
+                nz-icon
+                *ngIf="i === improvementControls().length - 1"
+                nzType="plus-circle"
+                nzTheme="twotone"
+                style="margin-left: 10px; cursor: pointer"
+                (click)="addField('improv')"
+              ></span>
+              <span
+                nz-icon
+                nzType="minus-circle"
+                nzTheme="twotone"
+                *ngIf="improvementControls().length > 1"
+                nzTwotoneColor="red"
+                style="margin-left: 10px; cursor: pointer"
+                (click)="removeField(i, 'improv')"
+              ></span>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+      </div>
+      <div nz-row>
+        <div nz-col nzSpan="24" style="text-align: center">
           <button nz-button nzType="primary">SUBMIT</button>
         </div>
-      </nz-row>
+      </div>
     </form>
   </div>
 </div>

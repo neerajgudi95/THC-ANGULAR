@@ -1,4 +1,8 @@
 .thc__loginForm-wrapper {
+  background-image: url("../../../../assets/cs-bg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
   background-color: #f4f4f4;
   display: flex;
   align-items: center;
@@ -6,7 +10,7 @@
 }
 
 .thc__loginForm-container {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;

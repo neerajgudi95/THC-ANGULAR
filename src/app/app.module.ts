@@ -16,6 +16,7 @@ import { FooterComponent } from './pages/landing-page/footer/footer.component';
 import { IconsProviderModule } from './icons-provider.module';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { ThemeSettingsComponent } from './theme-settings/theme-settings.component';
 
 registerLocaleData(en);
 
@@ -26,6 +27,7 @@ registerLocaleData(en);
     FooterComponent,
     HeaderComponent,
     SidebarComponent,
+    ThemeSettingsComponent,
   ],
   imports: [
     BrowserModule,

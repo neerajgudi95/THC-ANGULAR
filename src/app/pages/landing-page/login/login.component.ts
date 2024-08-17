@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { CommonService } from '../../../common/_services/common.service';
+import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +24,8 @@ export class LoginComponent {
 
   constructor(
     private fb: NonNullableFormBuilder,
-    private commonService: CommonService
+    private commonService: CommonService,
+    private message: NzMessageService
   ) {}
 
   submitForm(): void {
@@ -41,11 +43,23 @@ export class LoginComponent {
 
   loginUser() {
     this.commonService.login(this.validateForm.value).subscribe({
-      next: (response: any) => {
-        console.log(response);
-      },
+      next: (response: any) => {},
       error: (error: any) => {
-        console.log(error);
+        if (error.status == 401) {
+          this.message.error(
+            'Username or Password is incorrect, please try again'
+          );
+        }
+        if (error.status == 500) {
+          this.message.error(
+            'Something went wrong, please try again or try after some time'
+          );
+        }
+        if (error.code == 'ERR_NETWORK') {
+          this.message.error(
+            'Kindly check you internet connection and try again'
+          );
+        }
       },
       complete: () => {},
     });

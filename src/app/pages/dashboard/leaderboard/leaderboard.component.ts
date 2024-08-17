@@ -24,7 +24,6 @@ export class LeaderboardComponent {
 
   getTrophyColor(position: number) {
     let color = '';
-    console.log(position);
     if (position === 0) color = '#FFD93D';
     if (position === 1) color = '#DBDFEA';
     if (position === 2) color = '#874C62';

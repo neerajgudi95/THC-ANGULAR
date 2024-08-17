@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormRecord, Validators } from '@angular/forms';
+import {
+  FormArray,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-feedback-form',
@@ -8,6 +14,47 @@ import { FormControl, FormGroup, FormRecord, Validators } from '@angular/forms';
 })
 export class FeedbackFormComponent implements OnInit {
   feedbackForm: any;
+
+  constructor(private fb: FormBuilder) {}
+
+  addField(type: string): void {
+    if (type == 'improv') {
+      this.improvementsArray.push(new FormControl('', Validators.required));
+    }
+    if (type == 'observ') {
+      this.observationsArray.push(new FormControl('', Validators.required));
+    }
+  }
+
+  removeField(i: any, type: string): void {
+    if (type == 'improv') {
+      this.improvementsArray.removeAt(i);
+    }
+    if (type == 'observ') {
+      this.observationsArray.removeAt(i);
+    }
+  }
+
+  get observationsArray() {
+    return this.feedbackForm.get('goodObservations') as FormArray;
+  }
+
+  get improvementsArray() {
+    return this.feedbackForm.get('improvementsRequired') as FormArray;
+  }
+
+  observationControls() {
+    return (this.feedbackForm.get('goodObservations') as FormArray).controls;
+  }
+
+  improvementControls() {
+    return (this.feedbackForm.get('improvementsRequired') as FormArray)
+      .controls;
+  }
+
+  submitForm(): void {
+    console.log(this.feedbackForm.value);
+  }
 
   ngOnInit(): void {
     this.feedbackForm = new FormGroup({
@@ -19,8 +66,11 @@ export class FeedbackFormComponent implements OnInit {
       problemSolving: new FormControl('', Validators.required),
       behavior: new FormControl('', Validators.required),
       recordingLink: new FormControl('', Validators.required),
-      // goodObservations: new FormRecord()
-      // improvementsRequired: new FormRecord()
+      goodObservations: this.fb.array([]),
+      improvementsRequired: this.fb.array([]),
     });
+
+    this.addField('improv');
+    this.addField('observ');
   }
 }

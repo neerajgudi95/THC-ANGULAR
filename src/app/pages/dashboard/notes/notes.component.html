@@ -14,7 +14,13 @@
     >
   </div>
   <div nz-col nzSpan="24">
-    <nz-table #basicTable [nzData]="listOfNotes" nzSize="small">
+    <nz-table
+      #basicTable
+      [nzData]="listOfNotes"
+      nzSize="small"
+      nzFrontPagination="true"
+      [nzScroll]="{ y: '500px' }"
+    >
       <thead>
         <tr>
           <th>Name</th>
@@ -25,9 +31,9 @@
       </thead>
       <tbody>
         <tr *ngFor="let data of basicTable.data">
-          <td>{{ data.name }}</td>
+          <td>{{ data.filename }}</td>
           <td>{{ data.topic }}</td>
-          <td>{{ data.postedOn | date : "MMMM dd, yyyy" }}</td>
+          <td>{{ data.timestamp | date : "MMMM dd, yyyy" }}</td>
           <td>
             <button nz-button nzType="link">Download</button>
           </td>

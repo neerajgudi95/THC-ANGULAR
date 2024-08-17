@@ -1,0 +1,6 @@
+.theme-settings {
+  position: fixed;
+  z-index: 1;
+  top: 92%;
+  right: 30px;
+}

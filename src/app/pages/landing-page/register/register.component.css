@@ -1,4 +1,8 @@
 .thc__registration-wrapper {
+  background-image: url("../../../../assets/cs-bg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
   background-color: #f4f4f4;
   display: flex;
   align-items: center;
@@ -6,13 +10,13 @@
 }
 
 .thc__registration-container {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   border-radius: 10px;
-  width: 500px;
+  width: 700px;
   padding: 20px 50px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
 }
@@ -36,5 +40,5 @@
 }
 
 .register-area {
-  text-align: center;
+  text-align: right;
 }

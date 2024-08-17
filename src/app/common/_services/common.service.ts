@@ -13,14 +13,14 @@ export class CommonService {
   constructor(private httpClient: HttpClient) {}
 
   singup(userDetails: any) {
-    return this.httpClient.post(this.signupUrl, { body: userDetails }).pipe(
+    return this.httpClient.post(this.signupUrl, { ...userDetails }).pipe(
       map((data: any) => {
         return data;
       })
     );
   }
   login(userDetails: any) {
-    return this.httpClient.post(this.loginUrl, { body: userDetails }).pipe(
+    return this.httpClient.post(this.loginUrl, { ...userDetails }).pipe(
       map((data: any) => {
         return data;
       })
